@@ -1,0 +1,146 @@
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #0a0e1a;
+            color: #ffffff;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #ff4d6d;
+            text-decoration: none;
+            margin-bottom: 30px;
+            font-family: 'Arial', sans-serif;
+            font-size: 14px;
+            transition: opacity 0.3s;
+        }
+
+        .back-link:hover {
+            opacity: 0.7;
+        }
+
+        .header-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        .meta {
+            color: #888;
+            font-family: 'Arial', sans-serif;
+            font-size: 14px;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        h2 {
+            font-size: 32px;
+            margin: 50px 0 20px;
+            font-weight: 400;
+            color: #ff4d6d;
+        }
+
+        h3 {
+            font-size: 24px;
+            margin: 30px 0 15px;
+            font-weight: 400;
+            color: #ffffff;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: #ccc;
+        }
+
+        .concept-box {
+            background: rgba(255, 77, 109, 0.1);
+            border-left: 4px solid #ff4d6d;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+
+        .concept-box h3 {
+            margin-top: 0;
+            color: #ff4d6d;
+        }
+
+        ul, ol {
+            margin: 20px 0;
+            padding-left: 40px;
+            color: #ccc;
+        }
+
+        li {
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+
+        .formula {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            text-align: center;
+            font-family: 'Courier New', monospace;
+            font-size: 20px;
+            color: #fff;
+        }
+
+        .example {
+            background: rgba(100, 100, 255, 0.1);
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+
+        .example h4 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        code {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            .header-image {
+                height: 250px;
+            }
+        }

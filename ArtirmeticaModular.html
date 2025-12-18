@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aritmética Modular</title>
+    <link rel="stylesheet" href="/Styles/modular.css">
+</head>
+<body>
+    <div class="container"> 
+        <a href="index.html" class="back-link">← Volver al inicio</a>
+
+        <img src="/Imagenes/cuarta.jpg" alt="Aritmética Modular" class="header-image">
+
+        <h1>Aritmética Modular</h1>
+        
+        <div class="meta">
+            Matemáticas Discretas | Tiempo de lectura: 13 minutos
+        </div>
+
+        <p>
+            La aritmética modular es un sistema de aritmética para números enteros donde los números "se envuelven" al alcanzar un cierto valor llamado módulo. Es fundamental en teoría de números, criptografía, ciencias de la computación y muchas aplicaciones prácticas.
+        </p>
+
+        <h2>Concepto de Congruencia</h2>
+
+        <div class="definition">
+            <h4>Definición de Congruencia Modular</h4>
+            <p>
+                Dos números enteros <code>a</code> y <code>b</code> son <strong>congruentes módulo n</strong> si tienen el mismo residuo al dividirse por <code>n</code>.
+            </p>
+            <div class="formula">
+                a ≡ b (mod n)
+            </div>
+            <p>
+                Esto es equivalente a decir que <code>n</code> divide a <code>a - b</code>, es decir: <code>n | (a - b)</code>
+            </p>
+        </div>
+
+        <div class="example">
+            <h4>Ejemplos</h4>
+            <ul>
+                <li>17 ≡ 5 (mod 12) porque 17 - 5 = 12, y 12 | 12</li>
+                <li>23 ≡ 3 (mod 10) porque 23 - 3 = 20, y 10 | 20</li>
+                <li>-3 ≡ 7 (mod 10) porque -3 - 7 = -10, y 10 | -10</li>
+            </ul>
+        </div>
+
+        <h2>Analogía del Reloj</h2>
+
+        <p>
+            La aritmética modular se puede entender como la aritmética de un reloj. En un reloj de 12 horas, después de las 12 volvemos a 1.
+        </p>
+
+        <div class="clock-visual">
+            <div class="formula" style="font-size: 24px;">
+                13 horas ≡ 1 hora (mod 12)
+            </div>
+            <p>Si son las 10 AM y pasan 5 horas, son las 3 PM (10 + 5 = 15 ≡ 3 mod 12)</p>
+        </div>
+
+        <h2>Operaciones en Aritmética Modular</h2>
+
+        <h3>Propiedades de la Congruencia</h3>
+
+        <div class="concept-box">
+            <h3>Propiedades Básicas</h3>
+            <ul>
+                <li><strong>Reflexiva:</strong> a ≡ a (mod n)</li>
+                <li><strong>Simétrica:</strong> Si a ≡ b (mod n), entonces b ≡ a (mod n)</li>
+                <li><strong>Transitiva:</strong> Si a ≡ b (mod n) y b ≡ c (mod n), entonces a ≡ c (mod n)</li>
+            </ul>
+        </div>
+
+        <h3>Aritmética con Congruencias</h3>
+
+        <p>
+            Si <code>a ≡ b (mod n)</code> y <code>c ≡ d (mod n)</code>, entonces:
+        </p>
+
+        <div class="formula">
+            a + c ≡ b + d (mod n)
+        </div>
+
+        <div class="formula">
+            a - c ≡ b - d (mod n)
+        </div>
+
+        <div class="formula">
+            a × c ≡ b × d (mod n)
+        </div>
+
+        <div class="formula">
+            aᵏ ≡ bᵏ (mod n) para cualquier entero positivo k
+        </div>
+
+        <div class="example">
+            <h4>Ejemplo de Operaciones</h4>
+            <p>Calcular (7 × 8) mod 5:</p>
+            <p>Método 1: 7 × 8 = 56, y 56 mod 5 = 1</p>
+            <p>Método 2: 7 ≡ 2 (mod 5) y 8 ≡ 3 (mod 5)</p>
+            <p>Entonces: 7 × 8 ≡ 2 × 3 ≡ 6 ≡ 1 (mod 5)</p>
+        </div>
+
+        <h2>Clases de Residuos</h2>
+
+        <p>
+            Para un módulo <code>n</code>, existen exactamente <code>n</code> clases de residuos distintas: {0, 1, 2, ..., n-1}
+        </p>
+
+        <h3>Ejemplo: Módulo 5</h3>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Clase</th>
+                        <th>Elementos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>[0]</td>
+                        <td>..., -10, -5, 0, 5, 10, 15, ...</td>
+                    </tr>
+                    <tr>
+                        <td>[1]</td>
+                        <td>..., -9, -4, 1, 6, 11, 16, ...</td>
+                    </tr>
+                    <tr>
+                        <td>[2]</td>
+                        <td>..., -8, -3, 2, 7, 12, 17, ...</td>
+                    </tr>
+                    <tr>
+                        <td>[3]</td>
+                        <td>..., -7, -2, 3, 8, 13, 18, ...</td>
+                    </tr>
+                    <tr>
+                        <td>[4]</td>
+                        <td>..., -6, -1, 4, 9, 14, 19, ...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Teoremas Importantes</h2>
+
+        <div class="theorem">
+            <h4>Pequeño Teorema de Fermat</h4>
+            <p>Si <code>p</code> es primo y <code>a</code> no es divisible por <code>p</code>, entonces:</p>
+            <div class="formula">
+                aᵖ⁻¹ ≡ 1 (mod p)
+            </div>
+            <p>Equivalentemente: <code>aᵖ ≡ a (mod p)</code> para cualquier entero <code>a</code></p>
+        </div>
+
+        <div class="example">
+            <h4>Ejemplo del Teorema de Fermat</h4>
+            <p>Sea p = 7 y a = 2:</p>
+            <p>2⁶ = 64 ≡ 1 (mod 7) ✓</p>
+            <p>Verificación: 64 = 9 × 7 + 1</p>
+        </div>
+
+        <div class="theorem">
+            <h4>Teorema de Euler</h4>
+            <p>Si <code>a</code> y <code>n</code> son coprimos (MCD(a, n) = 1), entonces:</p>
+            <div class="formula">
+                a^φ(n) ≡ 1 (mod n)
+            </div>
+            <p>Donde φ(n) es la función phi de Euler (cantidad de números menores que n coprimos con n)</p>
+        </div>
+
+        <h2>Inversos Modulares</h2>
+
+        <div class="definition">
+            <h4>Inverso Modular</h4>
+            <p>
+                El inverso modular de <code>a</code> módulo <code>n</code> es un número <code>x</code> tal que:
+            </p>
+            <div class="formula">
+                a × x ≡ 1 (mod n)
+            </div>
+            <p>El inverso existe si y solo si MCD(a, n) = 1</p>
+        </div>
+
+        <div class="example">
+            <h4>Ejemplo de Inverso Modular</h4>
+            <p>Encontrar el inverso de 3 módulo 7:</p>
+            <p>Buscamos x tal que 3x ≡ 1 (mod 7)</p>
+            <p>Probando: 3 × 5 = 15 ≡ 1 (mod 7) ✓</p>
+            <p>Por lo tanto, el inverso de 3 módulo 7 es 5</p>
+        </div>
+
+        <h2>Aplicaciones de la Aritmética Modular</h2>
+
+        <div class="concept-box">
+            <h3>Criptografía</h3>
+            <ul>
+                <li><strong>RSA:</strong> Usa exponenciación modular con números primos grandes</li>
+                <li><strong>Diffie-Hellman:</strong> Intercambio de claves usando aritmética modular</li>
+                <li><strong>ElGamal:</strong> Sistema de cifrado basado en logaritmo discreto</li>
+            </ul>
+        </div>
+
+        <div class="concept-box">
+            <h3>Ciencias de la Computación</h3>
+            <ul>
+                <li><strong>Tablas Hash:</strong> Funciones hash usan operaciones módulo</li>
+                <li><strong>Generadores de números pseudoaleatorios</strong></li>
+                <li><strong>Detección de errores:</strong> Dígitos de verificación (ISBN, tarjetas de crédito)</li>
+                <li><strong>Algoritmos circulares:</strong> Buffers circulares, estructuras de datos</li>
+            </ul>
+        </div>
+
+        <div class="concept-box">
+            <h3>Otras Aplicaciones</h3>
+            <ul>
+                <li><strong>Calendarios:</strong> Cálculo de días de la semana</li>
+                <li><strong>Música:</strong> Teoría musical y escalas</li>
+                <li><strong>Arte:</strong> Patrones y simetrías</li>
+                <li><strong>Teoría de juegos:</strong> Estrategias óptimas</li>
+            </ul>
+        </div>
+
+        <h2>Algoritmo de Exponenciación Modular Rápida</h2>
+
+        <p>
+            Para calcular <code>aⁿ mod m</code> eficientemente, especialmente con números grandes:
+        </p>
+
+        <div class="example">
+            <h4>Ejemplo: Calcular 5¹³ mod 7</h4>
+            <p>13 en binario = 1101</p>
+            <p>5¹ ≡ 5 (mod 7)</p>
+            <p>5² ≡ 25 ≡ 4 (mod 7)</p>
+            <p>5⁴ ≡ 4² ≡ 16 ≡ 2 (mod 7)</p>
+            <p>5⁸ ≡ 2² ≡ 4 (mod 7)</p>
+            <p>5¹³ = 5⁸ × 5⁴ × 5¹ ≡ 4 × 2 × 5 ≡ 40 ≡ 5 (mod 7)</p>
+        </div>
+
+        <h2>Ecuaciones Lineales en Congruencias</h2>
+
+        <p>
+            Una ecuación de la forma <code>ax ≡ b (mod n)</code> tiene solución si y solo si <code>MCD(a, n) | b</code>
+        </p>
+
+        <div class="example">
+            <h4>Ejemplo</h4>
+            <p>Resolver: 6x ≡ 4 (mod 10)</p>
+            <p>MCD(6, 10) = 2, y 2 | 4, por lo que hay solución</p>
+            <p>Simplificando: 3x ≡ 2 (mod 5)</p>
+            <p>El inverso de 3 módulo 5 es 2 (porque 3 × 2 = 6 ≡ 1 mod 5)</p>
+            <p>Multiplicando: x ≡ 2 × 2 ≡ 4 (mod 5)</p>
+            <p>Soluciones: x = 4, 9, 14, 19, ... (todas de la forma 4 + 5k)</p>
+        </div>
+
+        <p style="margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1);">
+            La aritmética modular es una herramienta poderosa y elegante que unifica muchos conceptos matemáticos y tiene aplicaciones cruciales en el mundo digital moderno, especialmente en seguridad informática y algoritmos.
+        </p>
+
+        <a href="index.html" class="back-link" style="margin-top: 40px;">← Volver al inicio</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relaciones - Matemáticas Discretas</title>
+    <link rel="stylesheet" href="Styles/relacion.css">
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Volver al inicio</a>
+
+        <img src="/Imagenes/tercera.jpg" alt="Aritmética Modular" class="header-image">
+        <h1>Relaciones</h1>
+        
+        <div class="meta">
+            Matemáticas Discretas | Tiempo de lectura: 11 minutos
+        </div>
+
+        <p>
+            Las relaciones son una herramienta matemática fundamental que nos permite expresar asociaciones entre elementos de conjuntos. Son la base para entender funciones, bases de datos, grafos y muchas otras estructuras en matemáticas y ciencias de la computación.
+        </p>
+
+        <h2>Definición de Relación</h2>
+
+        <div class="definition">
+            <h4>Relación Binaria</h4>
+            <p>
+                Una relación binaria <code>R</code> entre dos conjuntos <code>A</code> y <code>B</code> es un subconjunto del producto cartesiano <code>A × B</code>.
+            </p>
+            <div class="formula">
+                R ⊆ A × B
+            </div>
+            <p>
+                Si <code>(a, b) ∈ R</code>, decimos que <code>a</code> está relacionado con <code>b</code>, y lo denotamos como <code>a R b</code>.
+            </p>
+        </div>
+
+        <div class="example">
+            <h4>Ejemplo Simple</h4>
+            <p>Sea A = {1, 2, 3} y B = {x, y}</p>
+            <p>Una relación R podría ser: R = {(1, x), (2, x), (3, y)}</p>
+            <p>Esto significa: 1Rx, 2Rx, 3Ry</p>
+        </div>
+
+        <h2>Representación de Relaciones</h2>
+
+        <h3>1. Diagrama de Flechas</h3>
+        <p>
+            Los elementos del primer conjunto se representan en un lado, y los del segundo conjunto en el otro, conectados por flechas si están relacionados.
+        </p>
+
+        <h3>2. Matriz de Relación</h3>
+        <p>
+            Para conjuntos finitos, una relación puede representarse como una matriz donde <code>M[i][j] = 1</code> si hay relación, y <code>0</code> en caso contrario.
+        </p>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>R</th>
+                        <th>x</th>
+                        <th>y</th>
+                        <th>z</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>a</strong></td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td><strong>b</strong></td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td><strong>c</strong></td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>3. Grafo Dirigido</h3>
+        <p>
+            Los elementos se representan como nodos y las relaciones como aristas dirigidas.
+        </p>
+
+        <h2>Propiedades de las Relaciones</h2>
+
+        <p>
+            Una relación <code>R</code> sobre un conjunto <code>A</code> puede tener las siguientes propiedades importantes:
+        </p>
+
+        <div class="property-grid">
+            <div class="property-card">
+                <h4>Reflexiva</h4>
+                <p>Todo elemento está relacionado consigo mismo.</p>
+                <div class="formula" style="font-size: 14px;">
+                    ∀a ∈ A: (a, a) ∈ R
+                </div>
+                <p><strong>Ejemplo:</strong> La relación "≤" es reflexiva porque a ≤ a para todo a.</p>
+            </div>
+
+            <div class="property-card">
+                <h4>Simétrica</h4>
+                <p>Si a está relacionado con b, entonces b está relacionado con a.</p>
+                <div class="formula" style="font-size: 14px;">
+                    ∀a,b ∈ A: aRb → bRa
+                </div>
+                <p><strong>Ejemplo:</strong> "es hermano de" es simétrica.</p>
+            </div>
+
+            <div class="property-card">
+                <h4>Antisimétrica</h4>
+                <p>Si a está relacionado con b y b con a, entonces a = b.</p>
+                <div class="formula" style="font-size: 14px;">
+                    ∀a,b ∈ A: (aRb ∧ bRa) → a = b
+                </div>
+                <p><strong>Ejemplo:</strong> La relación "≤" es antisimétrica.</p>
+            </div>
+
+            <div class="property-card">
+                <h4>Transitiva</h4>
+                <p>Si a está relacionado con b y b con c, entonces a está relacionado con c.</p>
+                <div class="formula" style="font-size: 14px;">
+                    ∀a,b,c ∈ A: (aRb ∧ bRc) → aRc
+                </div>
+                <p><strong>Ejemplo:</strong> La relación "<" es transitiva.</p>
+            </div>
+        </div>
+
+        <h2>Tipos Especiales de Relaciones</h2>
+
+        <h3>Relación de Equivalencia</h3>
+
+        <div class="concept-box">
+            <h3>Definición</h3>
+            <p>Una relación es de <strong>equivalencia</strong> si es:</p>
+            <ul>
+                <li>Reflexiva</li>
+                <li>Simétrica</li>
+                <li>Transitiva</li>
+            </ul>
+        </div>
+
+        <div class="example">
+            <h4>Ejemplos de Relaciones de Equivalencia</h4>
+            <ul>
+                <li>La igualdad (=)</li>
+                <li>Congruencia módulo n en enteros</li>
+                <li>"Tener la misma edad"</li>
+                <li>"Ser del mismo país"</li>
+            </ul>
+        </div>
+
+        <h3>Clases de Equivalencia</h3>
+
+        <p>
+            Dada una relación de equivalencia <code>R</code> sobre <code>A</code>, la clase de equivalencia de un elemento <code>a</code> es:
+        </p>
+
+        <div class="formula">
+            [a] = {x ∈ A | xRa}
+        </div>
+
+        <p>
+            Las clases de equivalencia particionan el conjunto <code>A</code> en subconjuntos disjuntos.
+        </p>
+
+        <h3>Relación de Orden</h3>
+
+        <div class="concept-box">
+            <h3>Orden Parcial</h3>
+            <p>Una relación es de <strong>orden parcial</strong> si es:</p>
+            <ul>
+                <li>Reflexiva</li>
+                <li>Antisimétrica</li>
+                <li>Transitiva</li>
+            </ul>
+            <p><strong>Ejemplo:</strong> La relación "≤" en números reales, la relación "⊆" en conjuntos.</p>
+        </div>
+
+        <div class="concept-box">
+            <h3>Orden Total</h3>
+            <p>Un orden parcial donde además todo par de elementos es comparable.</p>
+            <p><strong>Ejemplo:</strong> Los números reales con "≤" forman un orden total.</p>
+        </div>
+
+        <h2>Operaciones con Relaciones</h2>
+
+        <h3>Composición de Relaciones</h3>
+
+        <p>
+            Dadas dos relaciones <code>R ⊆ A × B</code> y <code>S ⊆ B × C</code>, la composición <code>S ∘ R</code> es:
+        </p>
+
+        <div class="formula">
+            S ∘ R = {(a, c) | ∃b ∈ B: (a, b) ∈ R ∧ (b, c) ∈ S}
+        </div>
+
+        <h3>Inversa de una Relación</h3>
+
+        <p>
+            La relación inversa <code>R⁻¹</code> se obtiene invirtiendo todos los pares ordenados:
+        </p>
+
+        <div class="formula">
+            R⁻¹ = {(b, a) | (a, b) ∈ R}
+        </div>
+
+        <h3>Cierre de Relaciones</h3>
+
+        <div class="definition">
+            <h4>Cierre Reflexivo</h4>
+            <p>Es la relación más pequeña que contiene a R y es reflexiva.</p>
+        </div>
+
+        <div class="definition">
+            <h4>Cierre Simétrico</h4>
+            <p>Es la relación más pequeña que contiene a R y es simétrica: R ∪ R⁻¹</p>
+        </div>
+
+        <div class="definition">
+            <h4>Cierre Transitivo</h4>
+            <p>Es la relación más pequeña que contiene a R y es transitiva. Se obtiene mediante composición sucesiva.</p>
+        </div>
+
+        <h2>Aplicaciones de las Relaciones</h2>
+
+        <div class="concept-box">
+            <h3>En Ciencias de la Computación</h3>
+            <ul>
+                <li><strong>Bases de Datos:</strong> Las relaciones modelan tablas y sus conexiones</li>
+                <li><strong>Grafos:</strong> Las aristas representan relaciones entre nodos</li>
+                <li><strong>Estructuras de Datos:</strong> Árboles y jerarquías son relaciones de orden</li>
+                <li><strong>Redes:</strong> Conexiones entre dispositivos o usuarios</li>
+                <li><strong>Compiladores:</strong> Relaciones de precedencia entre operadores</li>
+            </ul>
+        </div>
+
+        <h2>Funciones como Relaciones Especiales</h2>
+
+        <p>
+            Una función <code>f: A → B</code> es una relación especial donde cada elemento de <code>A</code> está relacionado con exactamente un elemento de <code>B</code>.
+        </p>
+
+        <div class="formula">
+            ∀a ∈ A, ∃!b ∈ B: (a, b) ∈ f
+        </div>
+
+        <p style="margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1);">
+            Las relaciones son un concepto unificador en matemáticas que conecta teoría de conjuntos, álgebra, lógica y ciencias de la computación, siendo fundamentales para modelar y analizar estructuras en múltiples disciplinas.
+        </p>
+
+        <a href="index.html" class="back-link" style="margin-top: 40px;">← Volver al inicio</a>
+    </div>
+</body>
+</html>

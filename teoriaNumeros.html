@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teoría de Números y Combinatoria</title>
+    <link rel="stylesheet" href="/Styles/teoria.css">
+</head>
+<body>
+    <div class="container"> 
+        <a href="index.html" class="back-link">← Volver al inicio</a>
+
+        <img src="/Imagenes/primera.jpg" alt="Teoría de Números" class="header-image">
+
+        <h1>Teoría de Números y Combinatoria</h1>
+        
+        <div class="meta">
+            Matemáticas Discretas | Tiempo de lectura: 10 minutos
+        </div>
+
+        <p>
+            La teoría de números y la combinatoria son dos ramas fundamentales de las matemáticas discretas que estudian las propiedades de los números enteros y las formas de contar y organizar objetos, respectivamente.
+        </p>
+
+        <h2>Teoría de Números</h2>
+
+        <p>
+            La teoría de números es una rama de las matemáticas puras que se dedica al estudio de los números enteros y sus propiedades. Es una de las áreas más antiguas y fundamentales de las matemáticas.
+        </p>
+
+        <h3>Divisibilidad</h3>
+
+        <p>
+            Decimos que un entero <code>a</code> divide a otro entero <code>b</code> (denotado <code>a | b</code>) si existe un entero <code>k</code> tal que <code>b = a × k</code>.
+        </p>
+
+        <div class="concept-box">
+            <h3>Propiedades de la Divisibilidad</h3>
+            <ul>
+                <li>Si <code>a | b</code> y <code>b | c</code>, entonces <code>a | c</code> (transitividad)</li>
+                <li>Si <code>a | b</code> y <code>a | c</code>, entonces <code>a | (b + c)</code></li>
+                <li>Si <code>a | b</code>, entonces <code>a | (b × c)</code> para cualquier entero <code>c</code></li>
+            </ul>
+        </div>
+
+        <h3>Números Primos</h3>
+
+        <p>
+            Un número primo es un número natural mayor que 1 que solo es divisible por 1 y por sí mismo. Los números primos son los "bloques fundamentales" de todos los números enteros.
+        </p>
+
+        <div class="example">
+            <h4>Ejemplos de Números Primos</h4>
+            <p>2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47...</p>
+            <p><strong>Nota:</strong> El 2 es el único número primo par.</p>
+        </div>
+
+        <h3>Teorema Fundamental de la Aritmética</h3>
+
+        <p>
+            Todo número entero mayor que 1 puede expresarse de forma única como producto de números primos (salvo el orden de los factores).
+        </p>
+
+        <div class="formula">
+            n = p₁^a₁ × p₂^a₂ × p₃^a₃ × ... × pₖ^aₖ
+        </div>
+
+        <div class="example">
+            <h4>Ejemplo</h4>
+            <p>360 = 2³ × 3² × 5¹</p>
+            <p>Esta es la única forma de expresar 360 como producto de primos.</p>
+        </div>
+
+        <h3>Máximo Común Divisor (MCD)</h3>
+
+        <p>
+            El MCD de dos o más números es el mayor número que divide a todos ellos. Se puede calcular usando el Algoritmo de Euclides.
+        </p>
+
+        <div class="formula">
+            MCD(a, b) = MCD(b, a mod b)
+        </div>
+
+        <h2>Combinatoria</h2>
+
+        <p>
+            La combinatoria es la rama de las matemáticas que estudia las formas de contar, ordenar y organizar conjuntos de elementos, así como las propiedades de estas configuraciones.
+        </p>
+
+        <h3>Principio Fundamental del Conteo</h3>
+
+        <p>
+            Si un evento puede ocurrir de <code>m</code> formas diferentes y otro evento independiente puede ocurrir de <code>n</code> formas diferentes, entonces ambos eventos pueden ocurrir de <code>m × n</code> formas diferentes.
+        </p>
+
+        <div class="example">
+            <h4>Ejemplo</h4>
+            <p>Si tienes 3 camisas y 4 pantalones, puedes formar 3 × 4 = 12 atuendos diferentes.</p>
+        </div>
+
+        <h3>Permutaciones</h3>
+
+        <p>
+            Una permutación es un arreglo ordenado de objetos. El número de permutaciones de <code>n</code> objetos distintos es:
+        </p>
+
+        <div class="formula">
+            P(n) = n!
+        </div>
+
+        <p>
+            Para permutaciones de <code>r</code> objetos tomados de un conjunto de <code>n</code> objetos:
+        </p>
+
+        <div class="formula">
+            P(n, r) = n! / (n - r)!
+        </div>
+
+        <h3>Combinaciones</h3>
+
+        <p>
+            Una combinación es una selección de objetos donde el orden no importa. El número de combinaciones de <code>r</code> objetos tomados de <code>n</code> objetos es:
+        </p>
+
+        <div class="formula">
+            C(n, r) = n! / (r! × (n - r)!)
+        </div>
+
+        <div class="example">
+            <h4>Ejemplo: Diferencia entre Permutación y Combinación</h4>
+            <p><strong>Permutación:</strong> ¿De cuántas formas puedes ordenar 3 libros en un estante? P(3) = 3! = 6 formas</p>
+            <p><strong>Combinación:</strong> ¿De cuántas formas puedes elegir 2 libros de 5? C(5,2) = 10 formas</p>
+        </div>
+
+        <h3>Principio de Inclusión-Exclusión</h3>
+
+        <p>
+            Para contar elementos que pertenecen a la unión de conjuntos, debemos sumar los tamaños individuales y restar las intersecciones:
+        </p>
+
+        <div class="formula">
+            |A ∪ B| = |A| + |B| - |A ∩ B|
+        </div>
+
+        <div class="concept-box">
+            <h3>Aplicaciones de la Combinatoria</h3>
+            <ul>
+                <li>Probabilidad y estadística</li>
+                <li>Teoría de grafos</li>
+                <li>Optimización combinatoria</li>
+                <li>Diseño de experimentos</li>
+                <li>Criptografía</li>
+                <li>Análisis de algoritmos</li>
+            </ul>
+        </div>
+
+        <h2>Conexión entre Teoría de Números y Combinatoria</h2>
+
+        <p>
+            Estas dos áreas están profundamente conectadas. Por ejemplo, el teorema del binomio combina aspectos de ambas disciplinas, relacionando coeficientes binomiales (combinatoria) con propiedades algebraicas de los números.
+        </p>
+
+        <div class="formula">
+            (a + b)ⁿ = Σ C(n,k) × aⁿ⁻ᵏ × bᵏ
+        </div>
+
+        <p style="margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1);">
+            La teoría de números y la combinatoria son herramientas esenciales en ciencias de la computación, siendo fundamentales para el análisis de algoritmos, criptografía, y la resolución de problemas computacionales complejos.
+        </p>
+
+        <a href="index.html" class="back-link" style="margin-top: 40px;">← Volver al inicio</a>
+    </div>
+</body>
+</html>

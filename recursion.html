@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursión - Matemáticas Discretas</title>
+    <link rel="stylesheet" href="/Styles/recursion.css">
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Volver al inicio</a>
+        <img src="/Imagenes/segunda.avif" alt="Aritmética Modular" class="header-image">
+        <h1>Recursión</h1>
+        
+        <div class="meta">
+            Matemáticas Discretas | Tiempo de lectura: 12 minutos
+        </div>
+
+        <p>
+            La recursión es una técnica fundamental en matemáticas y ciencias de la computación donde una función se define en términos de sí misma. Es una herramienta poderosa para resolver problemas que pueden descomponerse en subproblemas más simples de la misma naturaleza.
+        </p>
+
+        <h2>¿Qué es la Recursión?</h2>
+
+        <p>
+            Una definición recursiva consta de dos partes esenciales:
+        </p>
+
+        <div class="concept-box">
+            <h3>Componentes de una Definición Recursiva</h3>
+            <ul>
+                <li><strong>Caso Base:</strong> La condición que detiene la recursión y proporciona un valor directo</li>
+                <li><strong>Caso Recursivo:</strong> La regla que reduce el problema hacia el caso base</li>
+            </ul>
+        </div>
+
+        <h2>Ejemplo Clásico: Factorial</h2>
+
+        <p>
+            El factorial de un número natural <code>n</code> (denotado <code>n!</code>) es el producto de todos los enteros positivos menores o iguales a <code>n</code>.
+        </p>
+
+        <h3>Definición Matemática</h3>
+
+        <div class="code-block">
+factorial(n) = {
+    <span class="number">1</span>,                     <span class="comment">si n = 0 (caso base)</span>
+    n × factorial(n-<span class="number">1</span>),    <span class="comment">si n > 0 (caso recursivo)</span>
+}
+        </div>
+
+        <h3>Implementación en Código</h3>
+
+        <div class="code-block">
+<span class="keyword">function</span> <span class="function">factorial</span>(n) {
+    <span class="comment">// Caso base</span>
+    <span class="keyword">if</span> (n === <span class="number">0</span> || n === <span class="number">1</span>) {
+        <span class="keyword">return</span> <span class="number">1</span>;
+    }
+    <span class="comment">// Caso recursivo</span>
+    <span class="keyword">return</span> n * <span class="function">factorial</span>(n - <span class="number">1</span>);
+}
+        </div>
+
+        <div class="example">
+            <h4>Ejemplo: Calculando 5!</h4>
+            <p>factorial(5) = 5 × factorial(4)</p>
+            <p>= 5 × 4 × factorial(3)</p>
+            <p>= 5 × 4 × 3 × factorial(2)</p>
+            <p>= 5 × 4 × 3 × 2 × factorial(1)</p>
+            <p>= 5 × 4 × 3 × 2 × 1</p>
+            <p>= <strong>120</strong></p>
+        </div>
+
+        <h2>Secuencia de Fibonacci</h2>
+
+        <p>
+            La secuencia de Fibonacci es otro ejemplo clásico donde cada número es la suma de los dos anteriores.
+        </p>
+
+        <h3>Definición Recursiva</h3>
+
+        <div class="code-block">
+fibonacci(n) = {
+    <span class="number">0</span>,                              <span class="comment">si n = 0</span>
+    <span class="number">1</span>,                              <span class="comment">si n = 1</span>
+    fibonacci(n-<span class="number">1</span>) + fibonacci(n-<span class="number">2</span>),  <span class="comment">si n > 1</span>
+}
+        </div>
+
+        <h3>Implementación</h3>
+
+        <div class="code-block">
+<span class="keyword">function</span> <span class="function">fibonacci</span>(n) {
+    <span class="comment">// Casos base</span>
+    <span class="keyword">if</span> (n === <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;
+    <span class="keyword">if</span> (n === <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;
+    
+    <span class="comment">// Caso recursivo</span>
+    <span class="keyword">return</span> <span class="function">fibonacci</span>(n - <span class="number">1</span>) + <span class="function">fibonacci</span>(n - <span class="number">2</span>);
+}
+        </div>
+
+        <h2>Recursión en Estructuras de Datos</h2>
+
+        <h3>Suma de Elementos en un Array</h3>
+
+        <div class="code-block">
+<span class="keyword">function</span> <span class="function">sumaArray</span>(arr, n) {
+    <span class="comment">// Caso base: array vacío</span>
+    <span class="keyword">if</span> (n <= <span class="number">0</span>) {
+        <span class="keyword">return</span> <span class="number">0</span>;
+    }
+    <span class="comment">// Caso recursivo: último elemento + suma del resto</span>
+    <span class="keyword">return</span> <span class="function">sumaArray</span>(arr, n - <span class="number">1</span>) + arr[n - <span class="number">1</span>];
+}
+        </div>
+
+        <h3>Torres de Hanói</h3>
+
+        <p>
+            Las Torres de Hanói es un problema clásico que se resuelve elegantemente con recursión. El objetivo es mover n discos de una torre a otra usando una torre auxiliar.
+        </p>
+
+        <div class="code-block">
+<span class="keyword">function</span> <span class="function">hanoi</span>(n, origen, destino, auxiliar) {
+    <span class="keyword">if</span> (n === <span class="number">1</span>) {
+        console.log(<span class="string">`Mover disco de ${origen} a ${destino}`</span>);
+        <span class="keyword">return</span>;
+    }
+    
+    <span class="comment">// Mover n-1 discos a torre auxiliar</span>
+    <span class="function">hanoi</span>(n - <span class="number">1</span>, origen, auxiliar, destino);
+    
+    <span class="comment">// Mover el disco más grande</span>
+    console.log(<span class="string">`Mover disco de ${origen} a ${destino}`</span>);
+    
+    <span class="comment">// Mover n-1 discos de auxiliar a destino</span>
+    <span class="function">hanoi</span>(n - <span class="number">1</span>, auxiliar, destino, origen);
+}
+        </div>
+
+        <h2>Recursión vs Iteración</h2>
+
+        <div class="concept-box">
+            <h3>Ventajas de la Recursión</h3>
+            <ul>
+                <li>Código más limpio y legible para problemas naturalmente recursivos</li>
+                <li>Más fácil de entender para problemas como árboles y grafos</li>
+                <li>Reduce la cantidad de código necesario</li>
+            </ul>
+        </div>
+
+        <div class="warning">
+            <h4>⚠️ Desventajas de la Recursión</h4>
+            <ul>
+                <li>Mayor uso de memoria debido a la pila de llamadas</li>
+                <li>Puede ser más lenta que las soluciones iterativas</li>
+                <li>Riesgo de desbordamiento de pila con recursión profunda</li>
+                <li>Algunas implementaciones recursivas tienen complejidad exponencial</li>
+            </ul>
+        </div>
+
+        <h2>Tipos de Recursión</h2>
+
+        <h3>1. Recursión Directa</h3>
+        <p>Una función se llama directamente a sí misma.</p>
+
+        <h3>2. Recursión Indirecta</h3>
+        <p>Una función A llama a una función B, que a su vez llama a A.</p>
+
+        <div class="code-block">
+<span class="keyword">function</span> <span class="function">par</span>(n) {
+    <span class="keyword">if</span> (n === <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">true</span>;
+    <span class="keyword">return</span> <span class="function">impar</span>(n - <span class="number">1</span>);
+}
+
+<span class="keyword">function</span> <span class="function">impar</span>(n) {
+    <span class="keyword">if</span> (n === <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">false</span>;
+    <span class="keyword">return</span> <span class="function">par</span>(n - <span class="number">1</span>);
+}
+        </div>
+
+        <h3>3. Recursión de Cola (Tail Recursion)</h3>
+        <p>La llamada recursiva es la última operación de la función. Algunos lenguajes optimizan este tipo de recursión.</p>
+
+        <div class="code-block">
+<span class="keyword">function</span> <span class="function">factorialTail</span>(n, acumulador = <span class="number">1</span>) {
+    <span class="keyword">if</span> (n === <span class="number">0</span>) <span class="keyword">return</span> acumulador;
+    <span class="keyword">return</span> <span class="function">factorialTail</span>(n - <span class="number">1</span>, n * acumulador);
+}
+        </div>
+
+        <h2>Pensamiento Recursivo</h2>
+
+        <p>
+            Para resolver problemas recursivamente, pregúntate:
+        </p>
+
+        <ol>
+            <li>¿Cuál es el caso más simple que puedo resolver directamente? (Caso base)</li>
+            <li>¿Cómo puedo reducir el problema a una versión más pequeña de sí mismo? (Caso recursivo)</li>
+            <li>¿Eventualmente llegaré al caso base?</li>
+        </ol>
+
+        <div class="concept-box">
+            <h3>Aplicaciones de la Recursión</h3>
+            <ul>
+                <li>Recorrido de árboles y grafos</li>
+                <li>Algoritmos de ordenamiento (QuickSort, MergeSort)</li>
+                <li>Algoritmos de búsqueda (Búsqueda binaria)</li>
+                <li>Programación dinámica</li>
+                <li>Divide y conquista</li>
+                <li>Procesamiento de estructuras anidadas</li>
+            </ul>
+        </div>
+
+        <p style="margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1);">
+            La recursión es una técnica fundamental que, aunque puede parecer compleja al principio, proporciona soluciones elegantes a muchos problemas en ciencias de la computación y matemáticas.
+        </p>
+
+        <a href="index.html" class="back-link" style="margin-top: 40px;">← Volver al inicio</a>
+    </div>
+</body>
+</html>
